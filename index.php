@@ -9,7 +9,7 @@
 <body>
     <div class="container my-5-">
         <h2>List of clients </h2>
-        <a class="btn btn-primary" role="button" href="/myshop/create.php">New Client</a>
+        <a class="btn btn-primary" role="button" href="/myshop/simple-crud/create.php">New Client</a>
         <br>
         <table class="table">
             <thead>
@@ -27,7 +27,7 @@
                 <?php
                 $servername="localhost";
                 $username="root";
-                $password="cutentag12";
+                $password="";
                 $database="myshop";
 
                 $connection = new mysqli($servername,$username,$password,$database);
@@ -36,7 +36,7 @@
                     die("Connection failed: " . $connection->connect_error);
                 }
 
-                $sql="SELECT * from clients";
+                $sql="SELECT * from clients order by ID";
                 $result = $connection->query($sql);
 
                 if (!$result) {
@@ -52,8 +52,8 @@
                     <td>$row[address]</td>
                     <td>$row[created_at]</td>
                     <td>
-                        <a class='btn btn-primary btn-sm' href='/myshop/edit.php?id=$row[id]'>Edit</a>
-                        <a class='btn btn-primary btn-sm btn-danger' href='/myshop/delete.php?id=$row[id]'>Delete</a>
+                        <a class='btn btn-primary btn-sm' href='/myshop/simple-crud/edit.php?id=$row[id]'>Edit</a>
+                        <a class='btn btn-primary btn-sm btn-danger' href='/myshop/simple-crud/delete.php?id=$row[id]'>Delete</a>
                     </td>
                     
                     

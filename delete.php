@@ -4,7 +4,7 @@ if (isset($_GET["id"])) {
 
    $servername="localhost";
     $username="root";
-    $password="cutentag12";
+    $password="";
     $database="myshop";
 
     $connection = new mysqli($servername,$username,$password,$database);
@@ -12,7 +12,7 @@ if (isset($_GET["id"])) {
     $sql="DELETE FROM clients where id=$id";
     $connection->query(($sql));
 
-    header("location: /myshop/index.php");
+    header("location: /myshop/simple-crud/index.php");
     exit;
 }
 ?>

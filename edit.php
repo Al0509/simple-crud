@@ -2,7 +2,7 @@
 
 $servername="localhost";
 $username="root";
-$password="cutentag12";
+$password="";
 $database="myshop";
 
 $connection = new mysqli($servername,$username,$password,$database);
@@ -63,7 +63,7 @@ if($_SERVER['REQUEST_METHOD']=='GET'){
         }
 
         $successMessage="Client added correctly!";
-        header("location: /myshop/index.php");
+        header("location: /myshop/simple-crud/index.php");
         exit;
     } while (true);
 }
@@ -136,7 +136,7 @@ if($_SERVER['REQUEST_METHOD']=='GET'){
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
                 <div class="col-sm-3 d-grid">
-                    <a href="/myshop/index.php" class="btn btn-outline-primary" role="button">Cancel</a>
+                    <a href="/myshop/simple-crud/index.php" class="btn btn-outline-primary" role="button">Cancel</a>
                 </div>
             </div>
         </form>

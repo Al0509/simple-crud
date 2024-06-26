@@ -1,7 +1,7 @@
 <?php
     $servername="localhost";
     $username="root";
-    $password="cutentag12";
+    $password="";
     $database="myshop";
 
     $connection = new mysqli($servername,$username,$password,$database);
@@ -43,7 +43,7 @@
                 $address="";
 
                 $successMessage="Client added correctly!";
-                header("location: /myshop/index.php");
+                header("location: /myshop/simple-crud/index.php");
                 exit;
             }catch(mysqli_sql_exception $e){
                 $errorMessage =  "Invalid Query: " . $connection->error;
@@ -122,7 +122,7 @@
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
                 <div class="col-sm-3 d-grid">
-                    <a href="/myshop/index.php" class="btn btn-outline-primary" role="button">Cancel</a>
+                    <a href="/myshop/simple-crud/index.php" class="btn btn-outline-primary" role="button">Cancel</a>
                 </div>
             </div>
         </form>
